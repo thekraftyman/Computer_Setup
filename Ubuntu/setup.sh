@@ -36,6 +36,15 @@ case ${atom_answer:0:1} in
   y|Y )
     echo "Installing Atom"
     sudo snap install atom --classic
+    packages=$( cat ../shared/atom-plugins.txt | tr "\n" " ")
+    echo "Installing Atom Packages: $packages"
+    read -a packarr <<< $packages
+    for package in "$packarr[@]"; do
+      if [[ ! -z $package ]]
+      then
+        apm install $package
+      fi
+    done
   ;;
   * )
     echo "Skipping Atom"
