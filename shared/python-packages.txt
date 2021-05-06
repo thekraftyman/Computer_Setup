@@ -1,0 +1,9 @@
+setuptools
+numpy
+requests
+bs4
+mechanicalsoup
+selenium
+scipy
+pandas
+venv

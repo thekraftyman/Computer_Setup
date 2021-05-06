@@ -1,0 +1,10 @@
+atom-ide-ui
+ide-python
+latex
+minimap
+script
+minimap-find-and-replace
+platformio-ide-terminal
+kite
+python-autopep8
+atom-file-icons
