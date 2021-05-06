@@ -29,7 +29,8 @@ sudo apt install git-all -y \
   openssh-client -y \
   net-tools -y \
   vim -y \
-  xclip -y
+  xclip -y \
+  fail2ban -y
 
 # install atom
 case ${atom_answer:0:1} in
