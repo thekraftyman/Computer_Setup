@@ -1,6 +1,4 @@
 #!/bin/bash
-# to run type 'initial_linux_setup.sh'
-# then type 'initial_linux_setup.sh'
 
 clear
 echo "  ___       _                   _       _____             _          _  _ ";
@@ -16,6 +14,7 @@ sleep 3
 # ask questions for adding extra stuff (used later)
 read -p "Would you like to install atom and its packages (y/n)? " atom_answer
 read -p "Would you like to install python and its packages (y/n)? " python_answer
+read -p "Would you like to install OSINT tools (y/n)?" osint_answer
 read -p "Would you like to install vlc (y/n)? " vlc_answer
 
 # update and upgrade
@@ -49,6 +48,29 @@ case ${atom_answer:0:1} in
   ;;
   * )
     echo "Skipping Atom"
+  ;;
+esac
+
+# install OSINT tools
+case ${osint_answer:0:1} in
+  y|Y )
+    echo "Installing OSINT tools"
+    mkdir ~/Documents/OSINT
+    cwd=$(pwd)
+    packages=$( cat ../shared/osint-tools.txt | tr "\n" " ")
+    cd ~/Documents/OSINT
+    echo "Installing OSINT packages: $packages"
+    read -a packarr <<< $packages
+    for package in "$packarr[@]"; do
+      if [[ ! -z $package ]]
+      then
+        git clone $package
+      fi
+    done
+    cd $cwd
+  ;;
+  * )
+    echo "Skipping OSINT tools"
   ;;
 esac
 
