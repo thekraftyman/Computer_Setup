@@ -16,6 +16,7 @@ read -p "Would you like to install atom and its packages (y/n)? " atom_answer
 read -p "Would you like to install python and its packages (y/n)? " python_answer
 read -p "Would you like to install OSINT tools (y/n)?" osint_answer
 read -p "Would you like to install vlc (y/n)? " vlc_answer
+read -p "Would you like to set up a hypervisor for virtualization (y/n)? " hypervisor_answer
 
 # update and upgrade
 sudo apt update && sudo apt upgrade -y
@@ -94,5 +95,26 @@ case ${vlc_answer:0:1} in
   ;;
   * )
     echo "Skipping VLC"
+  ;;
+esac
+
+# install hypervisor
+case ${hypervisor_answer:0:1} in
+  y|Y )
+    echo "Installing hypervisor"
+    sudo apt install -y \
+     qemu-kvm -y \
+     libvirt-daemon-system -y \
+     libvirt-clients -y \
+     bridge-utils -y \
+     virtinst -y \
+     virt-manager -y
+
+    sudo systemctl is-active libvirtd
+    sudo usermod -aG libvirt $USER
+    sudo usermod -aG kvm $USER
+  ;;
+  * )
+    echo "Skipping hypervisor"
   ;;
 esac
