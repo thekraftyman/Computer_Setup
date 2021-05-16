@@ -8,11 +8,6 @@ echo "╚══════╝╚═╝  ╚═╝╚══════╝   ╚
 echo "                                                                                           ";
 echo "                                                                                           ";
 echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
 sleep 3
 
 # ask questions for adding extra stuff (used later)
@@ -31,7 +26,8 @@ sudo apt install git-all -y \
   net-tools -y \
   vim -y \
   xclip -y \
-  fail2ban -y
+  fail2ban -y \
+  python3-venv -y
 
 # install ufw
 case ${ufw_answer:0:1} in

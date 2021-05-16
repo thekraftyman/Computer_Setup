@@ -7,12 +7,6 @@ echo "███████╗██║  ██║███████║   █
 echo "╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝";
 echo "                                                                                           ";
 echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
-echo "                                                                                           ";
 sleep 3
 
 # ask questions for adding extra stuff (used later)
@@ -34,7 +28,12 @@ sudo apt install git-all -y \
   net-tools -y \
   vim -y \
   xclip -y \
-  fail2ban -y
+  fail2ban -y \
+  python3-venv \
+  zsh -y
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install atom
 case ${atom_answer:0:1} in
