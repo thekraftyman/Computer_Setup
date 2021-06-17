@@ -49,5 +49,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # generate ssh keys to add places
 /bin/zsh ./ssh_keys_setup.sh
 
+# add gpg setup
+/bin/zsh ./gpg_setup.sh
+
 # finally, tell the setup user of the next steps
 /bin/zsh ./next_steps.sh
