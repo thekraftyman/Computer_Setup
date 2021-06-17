@@ -46,5 +46,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # run the configuration script
 /bin/zsh ./configurations.sh
 
-# finally, generate ssh keys to add places
+# generate ssh keys to add places
 /bin/zsh ./ssh_keys_setup.sh
+
+# finally, tell the setup user of the next steps
+/bin/zsh ./next_steps.sh
