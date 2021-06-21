@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ZSH_DISABLE_COMPFIX="true"
 
+# PATH Edits
+export PATH=$PATH:~/.composer/vendor/bin
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -75,7 +78,6 @@ ZSH_THEME="awesomepanda"
 plugins=(
   git
   vi-mode
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotback='f(){mv "$1" ~/.dotfiles/"$1"; ln -s ~/.dotfiles/"$1" "$1";unset -f f;}; f'
 alias typescriptconf='cp ~/.boilerplate/tsconfig.json ./tsconfig.json'
+alias php_compat='phpcs -p $1 --standard=PHPCompatibility --report=full'
+
+# gpg_tty
+export GPG_TTY=$(tty)

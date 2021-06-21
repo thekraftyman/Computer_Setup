@@ -24,8 +24,10 @@ clear
 echo "You can import iterm 2 configuration from the config file in ../shared/configurations/ "
 
 # vimrc & zshrc
-mv ../shared/configurations/.vimrc ~/.vimrc
-mv ../shared/configurations/.zshrc ~/.zshrc
+ln -s ../shared/configurations/.vimrc ~/.vimrc
+ln -s ../shared/configurations/.zshrc ~/.zshrc
+## mv ../shared/configurations/.vimrc ~/.vimrc
+## mv ../shared/configurations/.zshrc ~/.zshrc
 
 # install the zsh-autosuggestions plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
