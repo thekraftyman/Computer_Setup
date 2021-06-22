@@ -378,7 +378,7 @@
 		<key>0x6a-0x100000-0x26</key>
 		<dict>
 			<key>Action</key>
-			<integer>18</integer>
+			<integer>31</integer>
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
@@ -387,7 +387,7 @@
 		<key>0x6b-0x100000-0x28</key>
 		<dict>
 			<key>Action</key>
-			<integer>19</integer>
+			<integer>30</integer>
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
