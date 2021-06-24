@@ -1,4 +1,5 @@
 atom
+ansible
 google-chrome
 alfred
 dbeaver-community
