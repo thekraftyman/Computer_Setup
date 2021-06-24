@@ -50,7 +50,7 @@ esac
 case ${homebrewanswer:0:1} in
   y|Y )
     echo "Installing homebrew"
-    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # run the homebrew script
     /bin/zsh ./brew_packages_installer.sh
   ;;
