@@ -64,7 +64,7 @@ case ${pipanswer:0:1} in
   y|Y )
     sudo easy_install pip
 
-    pip install --user ansible
+    pip3 install --user ansible
   ;;
   * )
     echo "Skipping pip and ansible installation"
