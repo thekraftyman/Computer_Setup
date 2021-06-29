@@ -26,6 +26,7 @@ echo "You can import iterm 2 configuration from the config file in ../shared/con
 # vimrc & zshrc
 ln -s ../shared/configurations/.vimrc ~/.vimrc
 ln -s ../shared/configurations/.zshrc ~/.zshrc
+ln -s ../shared/configurations/duellj-thekraftyman.zsh-theme ~/.oh-my-zsh/custom/themes/duellj-thekraftyman.zsh-theme
 ## mv ../shared/configurations/.vimrc ~/.vimrc
 ## mv ../shared/configurations/.zshrc ~/.zshrc
 
