@@ -7,6 +7,20 @@ filetype off
 " Turn on syntax highlighting.
 syntax on
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins through Vundle
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 " For plug-ins to load correctly.
 filetype plugin indent on
 
@@ -27,28 +41,10 @@ set formatoptions=tcqrn1
 set expandtab
 
 " Display tabs as 4 spaces wide. When expandtab is set, use 4 spaces.
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set softtabstop=2
 set noshiftround
-
-function TabsOrSpaces()
-    " Determines whether to use spaces or tabs on the current buffer.
-    if getfsize(bufname("%")) > 256000
-        " File is very large, just use the default.
-        return
-    endif
-
-    let numTabs=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^\\t"'))
-    let numSpaces=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^ "'))
-
-    if numTabs > numSpaces
-        setlocal noexpandtab
-    endif
-endfunction
-
-" Call the function after opening a buffer
-autocmd BufReadPost * call TabsOrSpaces()
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
@@ -100,3 +96,17 @@ vnoremap <Space> zf
 " Automatically save and load folds
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" enable stuff for plugins --------------
+
+" indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
