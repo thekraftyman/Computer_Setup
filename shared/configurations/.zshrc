@@ -112,6 +112,11 @@ source $ZSH/oh-my-zsh.sh
 alias dotback='f(){mv "$1" ~/.dotfiles/"$1"; ln -s ~/.dotfiles/"$1" "$1";unset -f f;}; f'
 alias typescriptconf='cp ~/.boilerplate/tsconfig.json ./tsconfig.json'
 alias php_compat='phpcs -p $1 --standard=PHPCompatibility --report=full'
+alias c='clear'
+alias e='exit'
+
+# custom vars
+DEPLOY_DIR='/Users/krafad01/Documents/luther_development/luther-deploy-virtualbox'
 
 # gpg_tty
 export GPG_TTY=$(tty)

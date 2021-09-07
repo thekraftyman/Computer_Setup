@@ -9,3 +9,4 @@ vagrant
 screeming-frog-seo-spider
 iterm2
 gnupg
+glow
