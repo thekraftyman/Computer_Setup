@@ -116,7 +116,6 @@ alias c='clear'
 alias e='exit'
 
 # custom vars
-DEPLOY_DIR='/Users/krafad01/Documents/luther_development/luther-deploy-virtualbox'
 
 # gpg_tty
 export GPG_TTY=$(tty)
