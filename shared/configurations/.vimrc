@@ -8,19 +8,19 @@ filetype off
 syntax on
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins through Vundle
-Plugin 'nathanaelkane/vim-indent-guides'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+" 
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
+" 
+" " Plugins through Vundle
+" Plugin 'nathanaelkane/vim-indent-guides'
+" 
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
 " For plug-ins to load correctly.
 filetype plugin indent on
 
@@ -41,9 +41,11 @@ set formatoptions=tcqrn1
 set expandtab
 
 " Display tabs as 4 spaces wide. When expandtab is set, use 4 spaces.
+set autoindent
+set noexpandtab
 set shiftwidth=2
 set tabstop=2
-set softtabstop=2
+"set softtabstop=2
 set noshiftround
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
@@ -92,6 +94,8 @@ set viminfo='100,<9999,s100
 " Map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+inoremap <S-Tab> <C-V><Tab>
+
 
 " Automatically save and load folds
 autocmd BufWinLeave *.* mkview

@@ -4,6 +4,7 @@ ZSH_DISABLE_COMPFIX="true"
 
 # PATH Edits
 export PATH=$PATH:~/.composer/vendor/bin
+export PATH=$PATH:~/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -14,7 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="duellj"
-ZSH_THEME="duellj-thekraftyman"
+# ZSH_THEME="duellj-thekraftyman"
+ZSH_THEME="duellj-thekraftyman-v2"
 # ZSH_THEME="awesomepanda"
 
 # Set list of themes to pick from when loading at random
@@ -114,8 +116,16 @@ alias typescriptconf='cp ~/.boilerplate/tsconfig.json ./tsconfig.json'
 alias php_compat='phpcs -p $1 --standard=PHPCompatibility --report=full'
 alias c='clear'
 alias e='exit'
+alias plugin='rm -r /Users/krafad01/Documents/luther_development/local_wp/wp-content/plugins/lutherheim; rsync -rv --exclude=.git /Users/krafad01/Documents/luther_development/lutherheim /Users/krafad01/Documents/luther_development/local_wp/wp-content/plugins/'
+alias nv='nvim $@'
+
+MODERN_NEOVIM=~/.config/modern-neovim
+export MODERN_NEOVIM
+alias mnv="XDG_DATA_HOME=$MODERN_NEOVIM/share XDG_CACHE_HOME=$MODERN_NEOVIM XDG_CONFIG_HOME=$MODERN_NEOVIM nvim"
 
 # custom vars
+export PATH="$PATH:/usr/local/opt/mongodb-community@6.0/bin"
+
 
 # gpg_tty
 export GPG_TTY=$(tty)
